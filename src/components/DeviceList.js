@@ -28,12 +28,12 @@ export const DeviceList = ({ devices, refs }) => {
     )
   })
 
-  const areDevicesConnected = () => devices && Object.keys(devices).length;
+  const areOtherDevicesConnected = () => devices && Object.keys(devices).length;
 
   return (
     <styles.InnerBox>
       {
-        areDevicesConnected()
+        areOtherDevicesConnected()
           ? <>
             <styles.Title>
               You're logged in on other devices <span role="img" aria-label="Thinking face">🤔</span>

@@ -15,17 +15,17 @@ export const syncLogic = {
     // Setup Twilio Sync client and get SyncMap
     this.devicesMap = await new SyncClient(token).map(`devices_${workerSid}`)
 
+    // Register current device to Sync map
+    await this.syncHelpers.registerCurrentDevice();
+
     // Add fetched values to the Redux store
     await this.syncHelpers.addInitialValuesToStore();
 
-    // Attach listeners to devices events
+    // Attach listeners to sync device events
     this.syncHelpers.addSyncListeners();
 
-    // Attach listeners to logout event
-    this.tokenHelpers.addFlexListeners();
-
-    // Register current device to Sync map
-    await this.syncHelpers.registerCurrentDevice();
+    // Attach listeners to logout event (clean-up task)
+    this.flex.Actions.addListener('beforeLogout', this.tokenHelpers.removeCurrent.bind(this))
   },
 
   syncHelpers: {
@@ -64,7 +64,7 @@ export const syncLogic = {
       if (key === syncLogic.tokenHelpers.getCurrent()) {
 
         // Trigger user logout via Flex Action framework
-        syncLogic.flex.Actions.invokeAction('Logout', {
+        return syncLogic.flex.Actions.invokeAction('Logout', {
           forceLogout: true,
           // We pass current user activity in the payload to preserve it
           activitySid: syncLogic.flexState.worker.activity.sid,
@@ -125,10 +125,6 @@ export const syncLogic = {
 
     getKey() {
       return `${this.deviceTokenKey}`
-    },
-
-    addFlexListeners() {
-      syncLogic.flex.Actions.addListener('beforeLogout', this.removeCurrent.bind(this))
     },
   },
 

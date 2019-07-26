@@ -3,6 +3,7 @@ import { IconButton, styled } from '@twilio/flex-ui';
 export const OuterBox = styled("div")`
   margin-left: auto;
   margin-top: 2px;
+  overflow: hidden;
 `
 export const InnerBox = styled("div")`
   background: ${p => p.theme.colors.base2};

@@ -1,9 +1,9 @@
 import React from 'react';
 import { VERSION } from '@twilio/flex-ui';
 import { FlexPlugin } from 'flex-plugin';
-import { reducer } from './state'
 import { ConnectedDevicesDropdown } from './components/DevicesDropdown'
 import { syncLogic } from './syncLogic'
+import { reducer } from './state'
 
 const PLUGIN_NAME = 'DemoRemoteLogoutPlugin';
 
@@ -21,12 +21,12 @@ export default class DemoRemoteLogoutPlugin extends FlexPlugin {
    */
   init(flex, manager) {
     // Add a reducer to the Flex Redux Store
-    manager.store.addReducer("devices", reducer);
+    manager.store.addReducer("devices", reducer)
 
-    // Setup TwilioSync, fetch existing devices, add listeners, push current device to Sync
+    // Add a UI component to the view
+    flex.MainHeader.Content.add(<ConnectedDevicesDropdown key="devices" />)
+
+    // Setup Twilio Sync client, fetch the existing devices, register current device, add event listeners
     syncLogic.setup(flex, manager);
-
-    // Add our UI component
-    flex.MainHeader.Content.add(<ConnectedDevicesDropdown key="device-dropdown"/>);
   }
 }
