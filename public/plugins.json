@@ -9,5 +9,16 @@
       }
     ],
     "src": "http://localhost:3000/plugin-DEMO-remote-logout.js"
+  },
+  {
+    "name": "signal",
+    "version": "0.0.0",
+    "class": "signal",
+    "requires": [
+      {
+        "@twilio/flex-ui": "^1"
+      }
+    ],
+    "src": "https://amber-mouse-2916.twil.io/assets/plugin-signal.js"
   }
 ]
