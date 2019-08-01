@@ -1,5 +1,4 @@
 import React from 'react';
-import { VERSION } from '@twilio/flex-ui';
 import { FlexPlugin } from 'flex-plugin';
 import { ConnectedDevicesDropdown } from './components/DevicesDropdown'
 import { syncLogic } from './syncLogic'
@@ -15,6 +14,8 @@ export default class DemoRemoteLogoutPlugin extends FlexPlugin {
   /**
    * This code is run when your plugin is being started
    * Use this to modify any UI components or attach to the actions framework
+   *
+   * Main entry point
    *
    * @param flex { typeof import('@twilio/flex-ui') }
    * @param manager { import('@twilio/flex-ui').Manager }

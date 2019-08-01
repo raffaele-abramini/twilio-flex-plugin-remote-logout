@@ -5,6 +5,12 @@ import UAParser from 'ua-parser-js'
 import { actions } from '../state'
 
 export const syncLogic = {
+  /**
+   * Main entry point
+   * @param flex {{}}
+   * @param manager {{}}
+   * @return {Promise<void>}
+   */
   async setup(flex, manager) {
     this.flex = flex;
     this.manager = manager;

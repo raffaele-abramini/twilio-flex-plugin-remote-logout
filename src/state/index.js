@@ -7,10 +7,10 @@ export const reducer = (state = {}, action) => {
     case ADD_DEVICES:
       return { ...action.payload }
     case UPDATE_DEVICE:
-      return state[action.payload.key] ? state : { ...state, [action.payload.key]: action.payload }
+      return state[action.payload.key] ? { ...state } : { ...state, [action.payload.key]: action.payload }
     case REMOVE_DEVICE:
-      const { [action.payload]: removedItem, ...rest } = state
-      return rest
+      const { [action.payload]: removedItem, ...remainingDevices } = state
+      return remainingDevices
     default:
       return state
   }
