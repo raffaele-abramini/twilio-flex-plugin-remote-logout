@@ -1,4 +1,3 @@
-import React from 'react'
 import { SyncClient } from 'twilio-sync'
 import uuid from 'uuid/v4'
 import UAParser from 'ua-parser-js'

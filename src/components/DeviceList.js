@@ -36,14 +36,13 @@ export const DeviceList = ({ devices, refs }) => {
         areOtherDevicesConnected()
           ? <>
             <styles.Title>
-              You're logged in on other devices <span role="img" aria-label="Thinking face">🤔</span>
+              You are logged in on {Object.keys(devices).length > 1 ? "other devices" : "another device"}.
             </styles.Title>
             {renderDeviceRows()}
           </>
           : (
             <styles.Title>
-              This is the only device where you're logged in!
-              <span role="img" aria-label="Let's celebrate!">&nbsp;🎉</span>
+              You are only logged in on this device.
             </styles.Title>
           )
       }

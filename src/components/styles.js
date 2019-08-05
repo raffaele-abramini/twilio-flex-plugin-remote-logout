@@ -6,7 +6,7 @@ export const OuterBox = styled("div")`
   overflow: hidden;
 `
 export const InnerBox = styled("div")`
-  background: ${p => p.theme.colors.base2};
+  background: #192960;
   width: 220px;
   color: ${p => p.theme.calculated.textColor};
   padding: 12px 12px 8px;
@@ -56,14 +56,14 @@ export const LogoutDeviceBtn = styled(IconButton)`
   }
 `
 export const ToggleButton = styled(IconButton)`
-    background-image: ${p => p.isOpen ? setBg(p, { bg: 'rgba(0,0,0,0.4)' }) : ''};
+    // background-image: ${p => p.isOpen ? setBg(p, { bg: 'rgba(0,0,0,0.4)' }) : ''};
 `
 
 export const Alert = styled("div")`
     animation: flashDangerColor 0.5s infinite alternate;
     
     @keyframes flashDangerColor {
-      from { color: #ff2020; }
-      to { color: #ff7272; }
+      from { color: #FF0000; }
+      to { color: #FFE600; }
     }
 `

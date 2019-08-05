@@ -19,6 +19,7 @@ export const DevicesDropdown = ({ devices = {} }) => {
   const renderControl = (isOpen) => (
     <styles.ToggleButton
       isOpen={isOpen}
+      title={""}
       icon={areOtherDevicesConnected()
         ? <styles.Alert>{isOpen ? <icons.MultiLoginBold/> : <icons.MultiLogin/>}</styles.Alert>
         : isOpen ? <icons.SingleLoginBold/> : <icons.SingleLogin/>
