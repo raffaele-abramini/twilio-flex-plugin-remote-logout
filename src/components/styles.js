@@ -1,11 +1,11 @@
 import { IconButton, styled } from '@twilio/flex-ui';
 
-export const OuterBox = styled("div")`
+export const OuterBox = styled('div')`
   margin-left: auto;
   margin-top: 2px;
   overflow: hidden;
-`
-export const InnerBox = styled("div")`
+`;
+export const InnerBox = styled('div')`
   background: #192960;
   width: 220px;
   color: ${p => p.theme.calculated.textColor};
@@ -18,32 +18,32 @@ export const InnerBox = styled("div")`
     from { opacity: 0; }
     to { opacity: 1; }
   }
-`
-export const Title = styled("p")`
+`;
+export const Title = styled('p')`
   font-weight: bold;
   margin-top: 0;
   
   &:not(:last-child) {
     margin-bottom: 12px;
   }
-`
+`;
 
-export const DeviceRow = styled("div")`
+export const DeviceRow = styled('div')`
   display: flex;
   padding: 8px 0 4px; 
   margin-top: 6px;
   border-top: 1px solid ${p => p.theme.colors.base4};
-`
-export const DeviceRowDetail = styled("div")`
+`;
+export const DeviceRowDetail = styled('div')`
   padding-right: 4px;
   margin-right: auto;
   font-size: 11px;
-`
+`;
 
-const setBg  = (p, det) => {
+const setBg = (p, det) => {
   const bg = det.bg || p.theme.colors.notificationIconColorError;
   return `linear-gradient(${bg}, ${bg})`;
-}
+};
 
 export const LogoutDeviceBtn = styled(IconButton)`
   flex-shrink: 0;
@@ -54,16 +54,16 @@ export const LogoutDeviceBtn = styled(IconButton)`
      width: 20px;
      height: 20px;
   }
-`
+`;
 export const ToggleButton = styled(IconButton)`
     // background-image: ${p => p.isOpen ? setBg(p, { bg: 'rgba(0,0,0,0.4)' }) : ''};
-`
+`;
 
-export const Alert = styled("div")`
+export const Alert = styled('div')`
     animation: flashDangerColor 0.5s infinite alternate;
     
     @keyframes flashDangerColor {
       from { color: #FF0000; }
       to { color: #FFE600; }
     }
-`
+`;

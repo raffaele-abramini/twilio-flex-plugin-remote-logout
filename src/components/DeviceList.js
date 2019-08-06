@@ -1,6 +1,6 @@
-import * as styles from './styles'
-import React from 'react'
-import { syncLogic } from '../syncLogic'
+import * as styles from './styles';
+import React from 'react';
+import { syncLogic } from '../syncLogic';
 
 export const DeviceList = ({ devices, refs }) => {
   const handleLogout = (deviceKey) => {
@@ -8,11 +8,11 @@ export const DeviceList = ({ devices, refs }) => {
     syncLogic.logoutDevice(deviceKey);
 
     // Hide popup after a second
-    setTimeout(() => refs.modal.hide(), 1000)
-  }
+    setTimeout(() => refs.modal.hide(), 1000);
+  };
 
   const renderDeviceRows = () => Object.keys(devices).map(deviceKey => {
-    const { details, started } = devices[deviceKey]
+    const { details, started } = devices[deviceKey];
     return (
       <styles.DeviceRow key={deviceKey}>
         <styles.DeviceRowDetail>
@@ -25,8 +25,8 @@ export const DeviceList = ({ devices, refs }) => {
           title="Logout device"
         />
       </styles.DeviceRow>
-    )
-  })
+    );
+  });
 
   const areOtherDevicesConnected = () => devices && Object.keys(devices).length;
 
@@ -36,7 +36,7 @@ export const DeviceList = ({ devices, refs }) => {
         areOtherDevicesConnected()
           ? <>
             <styles.Title>
-              You are logged in on {Object.keys(devices).length > 1 ? "other devices" : "another device"}.
+              You are logged in on {Object.keys(devices).length > 1 ? 'other devices' : 'another device'}.
             </styles.Title>
             {renderDeviceRows()}
           </>
@@ -47,5 +47,5 @@ export const DeviceList = ({ devices, refs }) => {
           )
       }
     </styles.InnerBox>
-  )
-}
+  );
+};
