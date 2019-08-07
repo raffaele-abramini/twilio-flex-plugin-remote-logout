@@ -23,7 +23,7 @@ export const syncLogic = {
     // Register current device to Sync map
     await this.syncHelpers.registerCurrentDevice();
 
-    // Add fetched values to the Redux store
+    // Fetch and add existing devices to the Redux store
     await this.syncHelpers.addInitialValuesToStore();
 
     // Attach listeners to sync device events

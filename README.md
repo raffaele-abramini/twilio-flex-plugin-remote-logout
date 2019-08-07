@@ -1,6 +1,6 @@
 # Twilio Flex Plugin  - Remote Logout
 
-This plugin will allow agents to remotely logout from specific devices.
+**Proof of concept** for a Flex plugin that will allow agents to remotely logout from specific devices.
 
 ## Setup
 
